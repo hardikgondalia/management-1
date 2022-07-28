@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "visitor_management_front",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

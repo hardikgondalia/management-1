@@ -1,0 +1,7 @@
+{
+  "name": "visitor_management_front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
