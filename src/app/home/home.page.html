@@ -7,14 +7,89 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <!-- <ion-badge color="primary">11</ion-badge> -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                VISITOR CENTER
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col [routerLink]="['/visitor/check-in']">
+                Sign In
+              </ion-col>
+              <ion-col [routerLink]="['/visitor/check-out']">
+                Sign Out
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-col>
+        <ion-col>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                DATA CENTER
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                Sign In
+              </ion-col>
+              <ion-col>
+                Sign Out
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-col>
+        <ion-col>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                FACILITY REQUEST
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                Sign In
+              </ion-col>
+              <ion-col>
+                Sign Out
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-col>
+        <ion-col>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                EQUIPMENT RETURN
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                Sign In
+              </ion-col>
+              <ion-col>
+                Sign Out
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

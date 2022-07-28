@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>company-sign-up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="companySignUpForm">
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            Company Name <ion-text color="danger"> *</ion-text>
+          </ion-label>
+          <ion-input placeholder="Company Name" formControlName="companyName"></ion-input>
+          <ion-text color="danger"
+            *ngIf="(companySignUpForm.get('companyName')?.touched || isSubmitted) && companySignUpForm.get('companyName')?.hasError('required')">
+            Please Enter Company Name
+          </ion-text>
+
+        </ion-col>
+        <ion-col>
+          <ion-label>
+            Email <ion-text color="danger"> *</ion-text>
+          </ion-label>
+          <ion-input placeholder="Email" formControlName="email"></ion-input>
+          <ion-text color="danger"
+            *ngIf="(companySignUpForm.get('email')?.touched || isSubmitted) && companySignUpForm.get('email')?.hasError('required')">
+            Please Enter Email
+          </ion-text>
+          <ion-text color="danger"
+            *ngIf="(companySignUpForm.get('email')?.touched || isSubmitted)  && companySignUpForm.get('email')?.errors?.pattern">
+            Please Enter Valid Email
+          </ion-text>
+
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            Address Line 1 <ion-text color="danger"> *</ion-text>
+          </ion-label>
+          <ion-input formControlName="address1"></ion-input>
+          <ion-text color="danger"
+            *ngIf="(companySignUpForm.get('address1')?.touched || isSubmitted) && companySignUpForm.get('address1')?.hasError('required')">
+            Please Enter Address Line 1
+          </ion-text>
+
+        </ion-col>
+        <ion-col>
+          <ion-label>
+            Address Line 2 <ion-text color="danger"> *</ion-text>
+          </ion-label>
+          <ion-input formControlName="address2"></ion-input>
+          <ion-text color="danger"
+            *ngIf="(companySignUpForm.get('address2')?.touched || isSubmitted) && companySignUpForm.get('address2')?.hasError('required')">
+            Please Enter Address Line 2
+          </ion-text>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            Password <ion-text color="danger"> *</ion-text>
+          </ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+          <ion-text color="danger"
+            *ngIf="(companySignUpForm.get('password')?.touched || isSubmitted) && companySignUpForm.get('password')?.hasError('required')">
+            Please Enter Password
+          </ion-text>
+
+        </ion-col>
+        <ion-col>
+          <ion-label>
+            Confirm Password <ion-text color="danger"> *</ion-text>
+          </ion-label>
+          <ion-input type="password" formControlName="confirmPassword"></ion-input>
+          <ion-text color="danger"
+            *ngIf="(companySignUpForm.get('confirmPassword')?.touched || isSubmitted) && companySignUpForm.get('confirmPassword')?.hasError('required')">
+            Please Enter Confirm Password
+          </ion-text>
+          <ion-text color="danger"
+            *ngIf="(companySignUpForm.get('confirmPassword')?.touched  || isSubmitted) && companySignUpForm.get('confirmPassword')?.hasError('compare')">
+            Password and Confirm Password does not match.
+          </ion-text>
+        </ion-col>
+
+      </ion-row>
+    </form>
+    <ion-button color="warning" (click)="signup()">Submit</ion-button>
+  </ion-grid>
+</ion-content>

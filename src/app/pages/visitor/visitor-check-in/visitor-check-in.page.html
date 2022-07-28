@@ -5,5 +5,72 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <form [formGroup]="visitorCheckInForm">
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            Visitor Name <ion-text color="danger"> *</ion-text>
+          </ion-label>
+          <ion-input placeholder="Visitor Name" formControlName="visitorName"></ion-input>
+          <ion-text color="danger"
+            *ngIf="(visitorCheckInForm.get('visitorName')?.touched || isSubmitted) && visitorCheckInForm.get('visitorName')?.hasError('required')">
+            Please Enter Visitor Name
+          </ion-text>
+
+        </ion-col>
+        <ion-col>
+          <ion-label>
+            Location <ion-text color="danger"> *</ion-text>
+          </ion-label>
+          <ion-input placeholder="Location" formControlName="location"></ion-input>
+          <ion-text color="danger"
+            *ngIf="(visitorCheckInForm.get('location')?.touched || isSubmitted) && visitorCheckInForm.get('location')?.hasError('required')">
+            Please Enter Location
+          </ion-text>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            Person to visit <ion-text color="danger"> *</ion-text>
+          </ion-label>
+          <ion-input formControlName="personVisiter"></ion-input>
+          <ion-text color="danger"
+            *ngIf="(visitorCheckInForm.get('personVisiter')?.touched || isSubmitted) && visitorCheckInForm.get('personVisiter')?.hasError('required')">
+            Please Enter Person Visitor Name
+          </ion-text>
+
+        </ion-col>
+        <ion-col>
+          <ion-label>
+            Type of ID Checked <ion-text color="danger"> *</ion-text>
+          </ion-label>
+          <ion-select placeholder="Select Type Of Id" formControlName="idType">
+            <ion-select-option value="adhar">Aadhar Card</ion-select-option>
+            <ion-select-option value="pan">Pan Card</ion-select-option>
+            <ion-select-option value="voter">Voter ID Card</ion-select-option>
+          </ion-select>
+          <ion-text color="danger"
+            *ngIf="(visitorCheckInForm.get('idType')?.touched || isSubmitted) && visitorCheckInForm.get('idType')?.hasError('required')">
+            Please Select ID Type
+          </ion-text>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            Description
+          </ion-label>
+          <ion-textarea rows="6" cols="20" placeholder="Description"></ion-textarea>
+
+        </ion-col>
+
+      </ion-row>
+    </form>
+    <ion-button color="warning" (click)="checkIn()">CREATE</ion-button>
+  </ion-grid>
 
 </ion-content>
